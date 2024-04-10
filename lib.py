@@ -26,9 +26,9 @@ def convertir_grises(imagen):
 def create_histograma(img):
     hist = cv2.calcHist([img], [0], None, [256], [0, 256])
     hist[0] = 0
-    plt.plot(hist, color='red')
-    plt.scatter(10, hist[10], color='blue')
-    plt.show()
+    # plt.plot(hist, color='red')
+    # plt.scatter(10, hist[10], color='blue')
+    # plt.show()
     return hist
 
 
@@ -61,6 +61,17 @@ def barrido_valores(gris):
     return img
 
 
+def suavizante(gris):
+    h, w, _ = gris.shape
+    img = np.zeros((h, w))
+    for x in range(w):
+        for y in range(h):
+            p = gris.item(y, x)
+            if p >= 70 and p < 100:
+                img.itemset((y, x), 255)
+            else:
+                img.itemset((y, x), p)
+    return img
 def generate_contornos(gris, img):
     cv2.imwrite('copia.png', gris)
     im2 = cv2.imread("copia.png")
