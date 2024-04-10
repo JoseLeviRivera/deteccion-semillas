@@ -9,6 +9,7 @@ import cv2
 import numpy as np
 import csv
 
+"""" 
 # Función para procesar una imagen y retornar los datos relevantes
 def process_image(path):
     imagen = leer_imagen(path)
@@ -89,9 +90,8 @@ def procesar_carpeta(carpeta):
 # Carpeta que contiene las imágenes a procesar
 carpeta_imagenes_entrenamiento = "imagenes/A1"
 procesar_carpeta(carpeta_imagenes_entrenamiento)
+"""
 
-
-""" 
 # Prueba para una imagen en este caso la recortada 1.1
 imagen = leer_imagen("imagenes/A1/recortado_1.1.bmp")
 
@@ -180,5 +180,3 @@ numero_vacias = len(contornos_vacios)
 
 print("Número de semillas llenas:", numero_llenas)
 print("Número de semillas vacías:", numero_vacias)
-
-"""
